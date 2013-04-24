@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < ApplicationController
       sign_in_and_redirect @user, :event => :authentication
     else
       flash[:notice] = "authentication error"
-      redirect_to root_path
+      redirect_to user_path
     end
   end
 
@@ -17,7 +17,7 @@ class Users::OmniauthCallbacksController < ApplicationController
       sign_in_and_redirect @user, :event => :authentication
     else
       flash[:notice] = "authentication error"
-      redirect_to root_path
+      redirect_to user_path
     end
   end
 end
