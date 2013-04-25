@@ -15,6 +15,6 @@
   
 %ul
 - @friends.each do |friend|
-  %li= "#{ friend.first_name } #{ friend.nickname } #{ friend.last_name }, Nickname - (#{ friend.nickname })"
+  %li= image_tag friend.photo_50, class: 'img-rounded' "#{ friend.first_name } #{ friend.last_name }"
 
 = link_to 'Back', users_path
