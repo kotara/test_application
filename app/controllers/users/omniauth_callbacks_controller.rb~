@@ -11,9 +11,8 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def vkontakte
+  authentication_token = request.env['omniauth.auth'].credentials.token
   	@user = User.find_for_vkontakte_oauth request.env["omniauth.auth"]
-    @vk = VkontakteApi::Client.new(access_token.credentials.token)
-  	@friends = @vk.friends.get(fields: [:first_name, :last_name, :photo_medium])
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Vkontakte"
       sign_in_and_redirect @user, :event => :authentication
