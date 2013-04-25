@@ -17,7 +17,7 @@
 - if @user.provider == 'vkontakte'
   - @friends.each do |friend|
     %li= "#{ friend.first_name } #{ friend.last_name }"
-  - else
+- else
   - @friends.each do |friend|
     %li= "#{ friend.name }"
   
