@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.provider == 'vkontakte'
     @vk = VkontakteApi::Client.new(current_user.authentication_token)
-  	@friends = @vk.friends.get(fields: [:first_name, :last_name])
+  	@friends = @vk.friends.get(fields: [:first_name, :last_name, :screen_name])
   	else
   	@graph = Koala::Facebook::GraphAPI.new(current_user.authentication_token)
   	@friends = @graph.get_connections('me','friends',:fields=>"name,gender,username,link")
