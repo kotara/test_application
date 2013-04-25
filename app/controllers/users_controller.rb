@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   	@friends = @vk.friends.get(fields: [:first_name, :last_name])
   	else
   	@graph = Koala::Facebook::GraphAPI.new(current_user.authentication_token)
-  	@friends = @graph.get_connections('me','friends',:fields=>"name,gender,family")
+  	@friends = @graph.get_connections('me','friends', fields:[:name])
   	end
     respond_to do |format|
       format.html # show.html.erb
