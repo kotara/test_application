@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    if @user.provider = vkontakte
+    if @user.provider == 'vkontakte'
     @vk = VkontakteApi::Client.new(current_user.authentication_token)
   	@friends = @vk.friends.get(fields: [:first_name, :last_name])
   	else
