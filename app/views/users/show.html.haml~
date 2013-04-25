@@ -19,7 +19,7 @@
     %li= "#{ friend.first_name } #{ friend.last_name }"
 - else
   - @friends.each do |friend|
-    - friend.each_pair do |key, value|
+    - friend.each do |key, value|
       %p
         Key: #{key} Value: #{value}
   
