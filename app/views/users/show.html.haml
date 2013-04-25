@@ -15,6 +15,6 @@
   
 %ul
 - @friends.each do |friend|
-  %li= "#{ friend.first_name } #{ friend.last_name }, Nickname - (#{friend.nickname})"
+  %li= "#{ friend.first_name } #{ friend.last_name }, Nickname - (#{ friend.nickname })"
 
 = link_to 'Back', users_path
