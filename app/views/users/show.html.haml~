@@ -15,6 +15,6 @@
   
 %ul
 - @friends.each do |friend|
-  %li= image_tag friend.photo_50, class: 'img-rounded'
+  %li= image_tag("#{ friend.photo_50 }", :class => 'img-rounded') "#{ friend.first_name } #{ friend.last_name }"
 
 = link_to 'Back', users_path
