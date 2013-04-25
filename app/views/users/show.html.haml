@@ -19,7 +19,7 @@
     %li= "#{ friend.first_name } #{ friend.last_name }"
 - else
   - @friends.each do |friend|
-    %li= "#{friend[:name]}"
+    %li= "#{friend[name]}"
   
 
 = link_to 'Back', users_path
