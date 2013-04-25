@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @vk = VkontakteApi::Client.new(current_user.authentication_token)
-  	@friends = @vk.friends.get(fields: [:first_name, :last_name, :nickname])
+  	@friends = @vk.friends.get(fields: [:first_name, :last_name, :photo_50])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
