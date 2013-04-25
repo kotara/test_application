@@ -12,7 +12,9 @@
 %p
   %b Url:
   = @user.url
+  
+%ul
 - @friends.each do |friend|
-  = link_to "#{ friend.first_name } #{ friend.last_name }", user_path(friend.uid)
+  %li= "#{ friend.first_name } #{ friend.last_name }", Nickname - (#{friend.screen_name})
 
 = link_to 'Back', users_path
